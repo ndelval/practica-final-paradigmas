@@ -7,11 +7,15 @@ public class CarController : MonoBehaviour
     protected bool isBreaking;
 
     private CarSetup carSetup;
+    protected Rigidbody rb;
 
     private void Awake()
     {
         // Obtener el componente CarSetup en el mismo GameObject
+
         carSetup = GetComponent<CarSetup>();
+        rb = GetComponent<Rigidbody>();
+
     }
 
     protected void HandleMotor()

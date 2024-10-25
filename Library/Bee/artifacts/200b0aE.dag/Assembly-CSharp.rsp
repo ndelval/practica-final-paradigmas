@@ -367,6 +367,7 @@
 "Assets/Car Scripts/CarController.cs"
 "Assets/Car Scripts/CarSetup.cs"
 "Assets/Car Scripts/PlayerCarController.cs"
+"Assets/GameManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

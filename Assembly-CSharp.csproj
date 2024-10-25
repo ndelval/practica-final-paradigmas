@@ -63,6 +63,7 @@
     <Compile Include="Assets/Car Scripts/CarController.cs" />
     <Compile Include="Assets/Car Scripts/CarSetup.cs" />
     <Compile Include="Assets/Car Scripts/PlayerCarController.cs" />
+    <Compile Include="Assets/GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
