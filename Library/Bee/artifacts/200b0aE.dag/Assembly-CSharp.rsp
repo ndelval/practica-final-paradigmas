@@ -367,7 +367,14 @@
 "Assets/Car Scripts/CarController.cs"
 "Assets/Car Scripts/CarSetup.cs"
 "Assets/Car Scripts/PlayerCarController.cs"
+"Assets/EscapeUI/KeyBinds.cs"
+"Assets/EscapeUI/PauseMenu.cs"
+"Assets/EscapeUI/PleyerReset.cs"
+"Assets/EscapeUI/SettingsMenu.cs"
 "Assets/GameManager.cs"
+"Assets/Timer/FinishLineManager.cs"
+"Assets/Timer/ITimer.cs"
+"Assets/Timer/LapTimerManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

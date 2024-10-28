@@ -9,9 +9,10 @@ public class CarController : MonoBehaviour
     private CarSetup carSetup;
     protected Rigidbody rb;
 
+
     private void Awake()
     {
-        // Obtener el componente CarSetup en el mismo GameObject
+        
 
         carSetup = GetComponent<CarSetup>();
         rb = GetComponent<Rigidbody>();
@@ -57,4 +58,6 @@ public class CarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
+
+
 }
