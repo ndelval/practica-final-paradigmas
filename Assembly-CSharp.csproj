@@ -66,6 +66,7 @@
     <Compile Include="Assets/Car Scripts/CarSetup.cs" />
     <Compile Include="Assets/Car Scripts/PlayerCarController.cs" />
     <Compile Include="Assets/Timer/FinishLineManager.cs" />
+    <Compile Include="Assets/Car Scripts/HumoTuboEscape.cs" />
     <Compile Include="Assets/EscapeUI/PlayerReset.cs" />
     <Compile Include="Assets/EscapeUI/SettingsMenu.cs" />
     <Compile Include="Assets/Timer/ITimer.cs" />
