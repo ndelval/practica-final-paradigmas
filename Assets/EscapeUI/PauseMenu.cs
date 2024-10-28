@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -7,8 +5,8 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
     public GameObject speedometerUI;
     public GameObject pauseMenuUI;
-    public PlayerReset playerReset;
-    public SettingsMenu settingsMenu;  // Reference to the SettingsMenu
+    public SettingsMenu settingsMenu;
+    public PlayerReset playerReset;  // Referencia a PlayerReset
 
     void Start()
     {
@@ -48,13 +46,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        playerReset.ResetPlayer();
+        playerReset.ResetPlayer();  // Reiniciar el coche y el temporizador
         Resume();
     }
 
-    public void OpenSettings()  
+    public void OpenSettings()
     {
         pauseMenuUI.SetActive(false);
-        settingsMenu.OpenSettingsMenu();  
+        settingsMenu.OpenSettingsMenu();
     }
 }

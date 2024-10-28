@@ -60,16 +60,18 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.44f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/EscapeUI/LapTimerReset.cs" />
     <Compile Include="Assets/EscapeUI/PauseMenu.cs" />
     <Compile Include="Assets/Car Scripts/CarController.cs" />
     <Compile Include="Assets/Car Scripts/CarSetup.cs" />
     <Compile Include="Assets/Car Scripts/PlayerCarController.cs" />
     <Compile Include="Assets/Timer/FinishLineManager.cs" />
-    <Compile Include="Assets/EscapeUI/PleyerReset.cs" />
+    <Compile Include="Assets/EscapeUI/PlayerReset.cs" />
     <Compile Include="Assets/EscapeUI/SettingsMenu.cs" />
     <Compile Include="Assets/Timer/ITimer.cs" />
     <Compile Include="Assets/GameManager.cs" />
     <Compile Include="Assets/EscapeUI/KeyBinds.cs" />
+    <Compile Include="Assets/EscapeUI/PlayerPositionReset.cs" />
     <Compile Include="Assets/Timer/LapTimerManager.cs" />
   </ItemGroup>
   <ItemGroup>

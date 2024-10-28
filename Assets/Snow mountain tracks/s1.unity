@@ -1039,8 +1039,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedometerUI: {fileID: 1001771625}
   pauseMenuUI: {fileID: 1743079454}
-  playerReset: {fileID: 1301917419}
   settingsMenu: {fileID: 904365161}
+  playerReset: {fileID: 338082565}
 --- !u!1 &175417834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1578,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 617472632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &338082561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338082562}
+  - component: {fileID: 338082564}
+  - component: {fileID: 338082563}
+  - component: {fileID: 338082565}
+  m_Layer: 5
+  m_Name: ResetManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &338082562
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338082561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1743079455}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &338082563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338082561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70f6fa21344942fd9c41e8fd27cc69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lapTimer: {fileID: 444304612}
+--- !u!114 &338082564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338082561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec82af9252cd742fd9e7bbc2e506e7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 617472639}
+--- !u!114 &338082565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338082561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f9fa56fcdae44ba8b96dd0d9af1a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionReset: {fileID: 338082564}
+  lapTimerReset: {fileID: 338082563}
 --- !u!1 &341594464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,6 +2794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 617472639}
   lapTimer: {fileID: 444304612}
+  playerStartPosition: {x: 0, y: 0, z: 0}
+  playerStartRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &621820454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5895,7 +5975,6 @@ GameObject:
   - component: {fileID: 1301917418}
   - component: {fileID: 1301917417}
   - component: {fileID: 1301917416}
-  - component: {fileID: 1301917419}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -6017,20 +6096,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301917414}
   m_CullTransparentMesh: 1
---- !u!114 &1301917419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301917414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28051a1dee80444d2a3829d0123d164f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 617472639}
-  lapTimer: {fileID: 444304612}
 --- !u!1 &1347161479
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,6 +6130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 617472639}
   lapTimer: {fileID: 444304612}
+  playerStartPosition: {x: 0, y: 0, z: 0}
+  playerStartRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1347161481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6918,6 +6985,7 @@ RectTransform:
   - {fileID: 1301917415}
   - {fileID: 2003750863}
   - {fileID: 57696845}
+  - {fileID: 338082562}
   m_Father: {fileID: 155279867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8137,9 +8205,9 @@ SceneRoots:
   - {fileID: 463639969}
   - {fileID: 1906930514}
   - {fileID: 1819213220}
-  - {fileID: 1550090116}
   - {fileID: 1692656290}
   - {fileID: 1805803256}
+  - {fileID: 1550090116}
   - {fileID: 155279867}
   - {fileID: 904365160}
   - {fileID: 1955901368}
