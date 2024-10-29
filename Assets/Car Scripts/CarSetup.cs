@@ -1,27 +1,42 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarSetup : MonoBehaviour
 {
-    // Settings
+    // Car motor settings
     [SerializeField] public float motorForce = 2000f;
     [SerializeField] public float breakForce = 3000f;
     [SerializeField] public float maxSteerAngle = 30f;
+    [SerializeField] public float maxSpeedKmh = 180f;
+    [SerializeField] public float initialNitroValue = 1f;
 
-    // Wheel Colliders
+    // Nitro settings
+    public Slider nitroSlider;
+    public Color normalSmokeColor = Color.gray;
+    public Color nitroSmokeColor = Color.magenta;
+    public float normalSmokeSpeed = 2f;
+    public float nitroSmokeSpeed = 7f;
+    public float normalEmissionRate = 10f;
+    public float nitroEmissionRate = 50f;
+
+    // Wheel Colliders and Visual Transforms
     public WheelCollider frontLeftWheelCollider;
     public WheelCollider frontRightWheelCollider;
     public WheelCollider rearLeftWheelCollider;
     public WheelCollider rearRightWheelCollider;
 
-    // Wheels (Visual Transforms)
     public Transform frontLeftWheelTransform;
     public Transform frontRightWheelTransform;
     public Transform rearLeftWheelTransform;
     public Transform rearRightWheelTransform;
 
+    // Exhaust particle systems
+    public ParticleSystem smokeParticleSystem1;
+    public ParticleSystem smokeParticleSystem2;
+
     private void Awake()
     {
-        // Buscar automáticamente los componentes usando nombres específicos
+        // Assign wheels
         frontLeftWheelCollider = transform.Find("Wheels/Colliders/FrontLeftWheelCollider")?.GetComponent<WheelCollider>();
         frontRightWheelCollider = transform.Find("Wheels/Colliders/FrontRightWheelCollider")?.GetComponent<WheelCollider>();
         rearLeftWheelCollider = transform.Find("Wheels/Colliders/RearLeftWheelCollider")?.GetComponent<WheelCollider>();
@@ -31,6 +46,5 @@ public class CarSetup : MonoBehaviour
         frontRightWheelTransform = transform.Find("Wheels/Meshes/FrontRightWheelTransform");
         rearLeftWheelTransform = transform.Find("Wheels/Meshes/RearLeftWheelTransform");
         rearRightWheelTransform = transform.Find("Wheels/Meshes/RearRightWheelTransform");
-
     }
 }

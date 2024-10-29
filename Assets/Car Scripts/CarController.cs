@@ -3,36 +3,36 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     protected float horizontalInput, verticalInput;
-    private float currentSteerAngle, currentbreakForce;
+    private float currentSteerAngle, currentBreakForce;
     protected bool isBreaking;
 
-    private CarSetup carSetup;
+    protected CarSetup carSetup;
     protected Rigidbody rb;
 
+    public float nitrusValue;
+    public bool nitrusFlag;
 
     private void Awake()
     {
-        
-
         carSetup = GetComponent<CarSetup>();
         rb = GetComponent<Rigidbody>();
-
+        nitrusValue = carSetup.initialNitroValue;
     }
 
     protected void HandleMotor()
     {
         carSetup.frontLeftWheelCollider.motorTorque = verticalInput * carSetup.motorForce;
         carSetup.frontRightWheelCollider.motorTorque = verticalInput * carSetup.motorForce;
-        currentbreakForce = isBreaking ? carSetup.breakForce : 0f;
+        currentBreakForce = isBreaking ? carSetup.breakForce : 0f;
         ApplyBreaking();
     }
 
     protected void ApplyBreaking()
     {
-        carSetup.frontRightWheelCollider.brakeTorque = currentbreakForce;
-        carSetup.frontLeftWheelCollider.brakeTorque = currentbreakForce;
-        carSetup.rearLeftWheelCollider.brakeTorque = currentbreakForce;
-        carSetup.rearRightWheelCollider.brakeTorque = currentbreakForce;
+        carSetup.frontRightWheelCollider.brakeTorque = currentBreakForce;
+        carSetup.frontLeftWheelCollider.brakeTorque = currentBreakForce;
+        carSetup.rearLeftWheelCollider.brakeTorque = currentBreakForce;
+        carSetup.rearRightWheelCollider.brakeTorque = currentBreakForce;
     }
 
     protected void HandleSteering()
@@ -59,5 +59,35 @@ public class CarController : MonoBehaviour
         wheelTransform.position = pos;
     }
 
+    public void activateNitrus()
+    {
+        if (!nitrusFlag && nitrusValue <= 1)
+        {
+            nitrusValue += Time.deltaTime / 2;
+        }
+        else
+        {
+            nitrusValue -= (nitrusValue <= 0) ? 0 : Time.deltaTime / 3;
+        }
+        if (nitrusFlag && nitrusValue > 0)
+        {
+            startNitrusEmitter();
+        }
+    }
 
+    public void startNitrusEmitter()
+    {
+        rb.AddForce(transform.forward * 10000);
+    }
+    protected void UpdateNitroSlider()
+    {
+        if (carSetup.nitroSlider != null)
+        {
+            carSetup.nitroSlider.value = nitrusValue;
+        }
+    }
 }
+
+
+    
+

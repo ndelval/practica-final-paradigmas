@@ -8,7 +8,7 @@ public class ControlInputManager : MonoBehaviour
     public PlayerCarController playerCarController;
     public TMP_Text forwardKeyText, backwardKeyText, leftKeyText, rightKeyText, brakeKeyText;
 
-    private string currentAction;
+    private string currentAction = null;
     private bool waitingForKey = false;
 
     void Start()

@@ -13,12 +13,18 @@ public class PlayerPositionReset : MonoBehaviour
         playerStartRotation = rb.transform.rotation;
     }
 
-    // Método para reiniciar la posición del coche
     public void ResetPlayerPosition()
     {
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody no asignado en PlayerPositionReset");
+            return;
+        }
+
+        Debug.Log("Restableciendo la posición del coche...");
         rb.transform.position = playerStartPosition;
         rb.transform.rotation = playerStartRotation;
-        rb.velocity = Vector3.zero;  // Resetear la velocidad
-        rb.angularVelocity = Vector3.zero;  // Resetear la rotación angular
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
