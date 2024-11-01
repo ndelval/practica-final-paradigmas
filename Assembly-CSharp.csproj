@@ -62,12 +62,15 @@
   <ItemGroup>
     <Compile Include="Assets/EscapeUI/LapTimerReset.cs" />
     <Compile Include="Assets/EscapeUI/PauseMenu.cs" />
+    <Compile Include="Assets/HightAdjuster.cs" />
     <Compile Include="Assets/Car Scripts/CarController.cs" />
     <Compile Include="Assets/Car Scripts/CarSetup.cs" />
     <Compile Include="Assets/Car Scripts/PlayerCarController.cs" />
     <Compile Include="Assets/Timer/FinishLineManager.cs" />
     <Compile Include="Assets/Car Scripts/HumoTuboEscape.cs" />
     <Compile Include="Assets/EscapeUI/PlayerReset.cs" />
+    <Compile Include="Assets/AICarController.cs" />
+    <Compile Include="Assets/Path.cs" />
     <Compile Include="Assets/EscapeUI/SettingsMenu.cs" />
     <Compile Include="Assets/Timer/ITimer.cs" />
     <Compile Include="Assets/GameManager.cs" />

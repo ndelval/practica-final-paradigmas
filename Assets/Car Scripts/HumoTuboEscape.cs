@@ -4,7 +4,7 @@ public class HumoTuboEscape : MonoBehaviour
 {
     public ParticleSystem leftExhaustParticles;
     public ParticleSystem rightExhaustParticles;
-    public PlayerCarController carController;
+    public CarController carController;
     private CarSetup carSetup;
 
     void Start()

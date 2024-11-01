@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerCarController : CarController
 {
-    public float speed;
+    
     public Vector3 startPosition;
     public Dictionary<string, KeyCode> keyBindings;
 
@@ -47,16 +47,5 @@ public class PlayerCarController : CarController
         isBreaking = Input.GetKey(keyBindings["brake"]);
     }
 
-    private void ClampSpeed()
-    {
-        float speedKmh = rb.velocity.magnitude * 3.6f;
-        float maxSpeedMs = carSetup.maxSpeedKmh / 3.6f;
 
-        if (speedKmh > carSetup.maxSpeedKmh)
-        {
-            rb.velocity = rb.velocity.normalized * maxSpeedMs;
-        }
-
-        speed = speedKmh;
-    }
 }

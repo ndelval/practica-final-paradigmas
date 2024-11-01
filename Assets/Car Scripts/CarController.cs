@@ -3,8 +3,9 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     protected float horizontalInput, verticalInput;
-    private float currentSteerAngle, currentBreakForce;
+    protected float currentSteerAngle, currentBreakForce;
     protected bool isBreaking;
+    public float speed;
 
     protected CarSetup carSetup;
     protected Rigidbody rb;
@@ -57,6 +58,18 @@ public class CarController : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+    }
+    protected void ClampSpeed()
+    {
+        float speedKmh = rb.velocity.magnitude * 3.6f;
+        float maxSpeedMs = carSetup.maxSpeedKmh / 3.6f;
+
+        if (speedKmh > carSetup.maxSpeedKmh)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeedMs;
+        }
+
+        speed = speedKmh;
     }
 
     public void activateNitrus()
