@@ -63,21 +63,31 @@ public class SensorManager
 
     public bool CheckSideClearance(out bool rightSideClear, out bool leftSideClear)
     {
-        Vector3 frontRightWheel = carController.carSetup.frontRightWheelCollider.transform.position;
-        Vector3 rearRightWheel = carController.carSetup.rearRightWheelCollider.transform.position;
-        Vector3 frontLeftWheel = carController.carSetup.frontLeftWheelCollider.transform.position;
-        Vector3 rearLeftWheel = carController.carSetup.rearLeftWheelCollider.transform.position;
+        // Obtener la posición en el eje Y de las ruedas delanteras para la altura de los sensores laterales
+        float sensorHeight = carController.carSetup.frontLeftWheelCollider.transform.position.y;
 
-        rightSideClear = !CheckLateralSensorAll(frontRightWheel, 1, carController.detectionLayers) &&
-                         !CheckLateralSensorAll(rearRightWheel, 1, carController.detectionLayers);
+        // Posición de los sensores en la parte delantera y trasera de los laterales del coche
+        Vector3 frontRightSensorPos = carTransform.position + carTransform.forward * (frontSensorZPos-0.3f) + carTransform.right * sideSensorXPos;
+        //Vector3 rearRightSensorPos = carTransform.position - carTransform.forward * (frontSensorZPos - 0.3f) + carTransform.right * sideSensorXPos;
+        Vector3 frontLeftSensorPos = carTransform.position + carTransform.forward * (frontSensorZPos - 0.3f) - carTransform.right * sideSensorXPos;
+        //Vector3 rearLeftSensorPos = carTransform.position - carTransform.forward * (frontSensorZPos - 0.3f) - carTransform.right * sideSensorXPos;
 
+        // Ajustar la altura en el eje Y para que esté al nivel de las ruedas
+        frontRightSensorPos.y = sensorHeight;
+        //rearRightSensorPos.y = sensorHeight;
+        frontLeftSensorPos.y = sensorHeight;
+        //rearLeftSensorPos.y = sensorHeight;
 
-        leftSideClear = !CheckLateralSensorAll(frontLeftWheel, -1, carController.detectionLayers) &&
-                        !CheckLateralSensorAll(rearLeftWheel, -1, carController.detectionLayers);
-                        
+        // Verificar colisiones en los sensores laterales derecho e izquierdo
+        rightSideClear = !CheckLateralSensorAll(frontRightSensorPos, 1, carController.detectionLayers); //&&
+                                                                                                        //!CheckLateralSensorAll(rearRightSensorPos, 1, carController.detectionLayers);
+
+        leftSideClear = !CheckLateralSensorAll(frontLeftSensorPos, -1, carController.detectionLayers); //&&
+                        //!CheckLateralSensorAll(rearLeftSensorPos, -1, carController.detectionLayers);
 
         return rightSideClear || leftSideClear;
     }
+
 
     public bool CheckAngularClearance(out bool rightClear, out bool leftClear)
     {

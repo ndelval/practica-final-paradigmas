@@ -80,13 +80,6 @@ public class TurnManager : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
     public void CheckForSharpTurns()
     {
         float currentSpeedKmh = carController.rb.velocity.magnitude * 3.6f;
@@ -102,7 +95,8 @@ public class TurnManager : MonoBehaviour
 
             if (currentSpeedKmh > adjustedMaxCurveSpeed)
             {
-                carController.verticalInput = Mathf.Clamp(adjustedMaxCurveSpeed / currentSpeedKmh, 0.5f, 1f);
+                float brakeFactor = Mathf.InverseLerp(0, maxCurveAngle, turnAngle); // Proporcional a la curva
+                carController.verticalInput = Mathf.Lerp(0.8f, 1f, brakeFactor); // Rango ajustado de frenado
                 carController.isBreaking = true;
             }
             else

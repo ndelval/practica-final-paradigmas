@@ -95,7 +95,7 @@ public class OvertakeManager
         bool leftCollision, rightCollision;
         if (sensorManager.CheckLateralCollision(out leftCollision, out rightCollision))
         {
-            float adjustmentAngle = 5f; // Ángulo de ajuste para separarse del otro coche
+            float adjustmentAngle = 2.5f; // Ángulo de ajuste para separarse del otro coche
 
             if (rightCollision)
             {
