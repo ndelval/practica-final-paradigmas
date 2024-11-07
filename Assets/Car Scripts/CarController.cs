@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    protected float horizontalInput, verticalInput;
-    protected float currentSteerAngle, currentBreakForce;
-    protected bool isBreaking;
-    public float speed;
+    public float horizontalInput, verticalInput; // Cambia a public para permitir el acceso desde managers
+    public float currentSteerAngle, currentBreakForce;
+    public bool isBreaking { get; set; } // Cambia a public
+    public Rigidbody rb; // Asegúrate de que sea public para que AICarController y managers puedan acceder
 
-    protected CarSetup carSetup;
-    protected Rigidbody rb;
+    public CarSetup carSetup;
+    public float speed;
 
     public float nitrusValue;
     public bool nitrusFlag;
