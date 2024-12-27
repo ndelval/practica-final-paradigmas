@@ -8,19 +8,13 @@ public class GameManager : MonoBehaviour
     public PlayerCarController Car;
 
 
-
-
     private float needleStartPosition = 218.214f;
     private float needleEndPosition = -40.64f;
     private float desiredPosition;
 
     public float vehicleSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public VolumeManager volumeManager;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -28,6 +22,7 @@ public class GameManager : MonoBehaviour
 
         vehicleSpeed = Car.speed;
         UpdateNeedle();
+        volumeManager.changeVolume();
         
     }
 
@@ -36,8 +31,6 @@ public class GameManager : MonoBehaviour
         desiredPosition = needleStartPosition - needleEndPosition;
         float temp = vehicleSpeed / 180;
         needle.transform.eulerAngles = new Vector3(0, 0, (needleStartPosition - temp * desiredPosition));
-
-        
 
     }
 }

@@ -34,7 +34,15 @@ public class PauseMenu : MonoBehaviour
         speedometerUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
+
+        // Reanuda los sonidos del coche
+        CarAudioController[] audioControllers = FindObjectsOfType<CarAudioController>();
+        foreach (CarAudioController controller in audioControllers)
+        {
+            controller.ResumeAudio();
+        }
     }
+
 
     void Pause()
     {
@@ -42,7 +50,15 @@ public class PauseMenu : MonoBehaviour
         speedometerUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
+
+        // Pausa los sonidos del coche
+        CarAudioController[] audioControllers = FindObjectsOfType<CarAudioController>();
+        foreach (CarAudioController controller in audioControllers)
+        {
+            controller.PauseAudio();
+        }
     }
+
 
     public void Restart()
     {

@@ -596,6 +596,8 @@ MonoBehaviour:
   speed: 0
   nitrusValue: 0
   nitrusFlag: 0
+  engineRpm: 0
+  audioController: {fileID: 0}
   path: {fileID: 1941590618}
   detectionLayers:
     serializedVersion: 2
@@ -623,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4416696a6bc78490fa73ca6afcdad964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 2300
+  motorForce: 3000
   breakForce: 3000
   maxSteerAngle: 30
   maxSpeedKmh: 180
@@ -1781,6 +1783,8 @@ MonoBehaviour:
   speed: 0
   nitrusValue: 0
   nitrusFlag: 0
+  engineRpm: 0
+  audioController: {fileID: 0}
   path: {fileID: 1941590618}
   detectionLayers:
     serializedVersion: 2
@@ -1808,7 +1812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4416696a6bc78490fa73ca6afcdad964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 2000
+  motorForce: 2250
   breakForce: 3000
   maxSteerAngle: 30
   maxSpeedKmh: 180
@@ -9369,6 +9373,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 617472640}
+    - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 617472641}
   m_SourcePrefab: {fileID: 100100000, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
 --- !u!4 &617472632 stripped
 Transform:
@@ -9434,10 +9441,12 @@ MonoBehaviour:
   currentSteerAngle: 0
   currentBreakForce: 0
   rb: {fileID: 0}
-  carSetup: {fileID: 0}
+  carSetup: {fileID: 617472638}
   speed: 0
   nitrusValue: 0
   nitrusFlag: 0
+  engineRpm: 0
+  audioController: {fileID: 617472641}
 --- !u!114 &617472637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9459,6 +9468,8 @@ MonoBehaviour:
   speed: 0
   nitrusValue: 0
   nitrusFlag: 0
+  engineRpm: 0
+  audioController: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &617472638
 MonoBehaviour:
@@ -9472,10 +9483,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4416696a6bc78490fa73ca6afcdad964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 1250
-  breakForce: 3000
+  motorForce: 500
+  breakForce: 2000
   maxSteerAngle: 30
-  maxSpeedKmh: 180
+  maxSpeedKmh: 150
   initialNitroValue: 1
   nitroSlider: {fileID: 597953999}
   normalSmokeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -9514,6 +9525,22 @@ MonoBehaviour:
   leftExhaustParticles: {fileID: 1779845480}
   rightExhaustParticles: {fileID: 783033825}
   carController: {fileID: 617472637}
+--- !u!114 &617472641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362018018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8af86964e78455399747858c7d7281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparkWhileAcceleration: 0
+  sparkRate: 0.482
+  setup: {fileID: 11400000, guid: 311d04da03f758846bad3f40803a0b34, type: 2}
+  rpm: 0.472
 --- !u!1 &621820452
 GameObject:
   m_ObjectHideFlags: 0
@@ -10100,7 +10127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4416696a6bc78490fa73ca6afcdad964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 2250
+  motorForce: 2750
   breakForce: 3000
   maxSteerAngle: 30
   maxSpeedKmh: 180
@@ -10143,6 +10170,8 @@ MonoBehaviour:
   speed: 0
   nitrusValue: 0
   nitrusFlag: 0
+  engineRpm: 0
+  audioController: {fileID: 0}
   path: {fileID: 1941590618}
   detectionLayers:
     serializedVersion: 2
@@ -27935,6 +27964,8 @@ MonoBehaviour:
   speed: 0
   nitrusValue: 0
   nitrusFlag: 0
+  engineRpm: 0
+  audioController: {fileID: 0}
   path: {fileID: 1941590618}
   detectionLayers:
     serializedVersion: 2
@@ -27962,7 +27993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4416696a6bc78490fa73ca6afcdad964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 2100
+  motorForce: 2500
   breakForce: 3000
   maxSteerAngle: 30
   maxSpeedKmh: 180

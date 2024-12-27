@@ -31,6 +31,7 @@ public class PlayerCarController : CarController
         ClampSpeed();
         activateNitrus();
         UpdateNitroSlider();
+        UpdateAudio();
     }
 
     private void GetInput()

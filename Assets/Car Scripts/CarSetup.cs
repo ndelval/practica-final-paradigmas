@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class CarSetup : MonoBehaviour
 {
     // Car motor settings
-    [SerializeField] public float motorForce = 2000f;
+    [SerializeField] public float motorForce;
     [SerializeField] public float breakForce = 3000f;
     [SerializeField] public float maxSteerAngle = 30f;
     [SerializeField] public float maxSpeedKmh = 180f;

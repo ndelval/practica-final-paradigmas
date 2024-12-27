@@ -13,8 +13,25 @@ public class CarController : MonoBehaviour
     public float nitrusValue;
     public bool nitrusFlag;
 
+    public float engineRpm; // Las RPM calculadas basadas en la velocidad
+    public CarAudioController audioController; // Referencia al controlador de audio
+
+    protected void UpdateAudio()
+    {
+        // Calcula las RPM en función de la velocidad
+        float maxSpeedMs = carSetup.maxSpeedKmh / 3.6f; // Convierte la velocidad máxima a m/s
+        engineRpm = Mathf.Clamp(rb.velocity.magnitude / maxSpeedMs, 0f, 1f); // Normaliza entre 0 y 1
+        
+        // Actualiza las RPM en el controlador de audio
+        if (audioController != null)
+        {
+            audioController.rpm = engineRpm; // Envía las RPM al controlador de audio
+        }
+    }
+
     private void Awake()
     {
+             
         carSetup = GetComponent<CarSetup>();
         rb = GetComponent<Rigidbody>();
         nitrusValue = carSetup.initialNitroValue;
@@ -58,6 +75,7 @@ public class CarController : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+        
     }
     protected void ClampSpeed()
     {
@@ -91,6 +109,7 @@ public class CarController : MonoBehaviour
     public void startNitrusEmitter()
     {
         rb.AddForce(transform.forward * 10000);
+        
     }
     protected void UpdateNitroSlider()
     {
@@ -98,7 +117,10 @@ public class CarController : MonoBehaviour
         {
             carSetup.nitroSlider.value = nitrusValue;
         }
+        
     }
+    
+    
 }
 
 
