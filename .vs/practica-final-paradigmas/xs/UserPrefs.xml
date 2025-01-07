@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{1A585050-E08B-1A91-CA19-01D7FF9868BF}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Car Scripts/CarCollision.cs">
+    <Files>
+      <File FileName="Assets/Car Scripts/CarController.cs" Line="5" Column="1" />
+      <File FileName="Assets/Car Scripts/HumoTuboEscape.cs" Line="10" Column="17" />
+      <File FileName="Assets/Car Scripts/PlayerCarController.cs" Line="22" Column="1" />
+      <File FileName="Assets/Car Scripts/CarCollision.cs" Line="15" Column="72" />
+      <File FileName="Assets/Car Scripts/JumpingCarController.cs" Line="25" Column="30" />
+      <File FileName="Assets/Car Scripts/CarControllerBase.cs" Line="38" Column="32" />
+      <File FileName="Assets/Car Scripts/PlayerJumpingCarController.cs" Line="3" Column="1" />
+      <File FileName="Assets/Car Scripts/CarSetup.cs" Line="15" Column="22" />
+      <File FileName="Assets/EscapeUI/SettingsMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/EscapeUI/PlayerReset.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Car Scripts/CarFactory.cs" Line="31" Column="47" />
+      <File FileName="Assets/Car Scripts/CarSelectionMenu.cs" Line="76" Column="59" />
+      <File FileName="Assets/AIScrpits/AICarController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="practica-final-paradigmas">
+            <Node name="Assets" expanded="True">
+              <Node name="AIScrpits" expanded="True" />
+              <Node name="Car Scripts" expanded="True">
+                <Node name="CarCollision.cs" selected="True" />
+              </Node>
+              <Node name="EscapeUI" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="51eca009-1f24-4aca-ad59-0951294a7896" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
