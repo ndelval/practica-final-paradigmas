@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+
 public class CarSetup : MonoBehaviour
 {
     // Car motor settings
@@ -9,6 +12,7 @@ public class CarSetup : MonoBehaviour
     [SerializeField] public float maxSteerAngle = 30f;
     [SerializeField] public float maxSpeedKmh = 180f;
     [SerializeField] public float initialNitroValue = 1f;
+    [SerializeField] public float jumpForce = 1200;
 
     // Nitro settings
     public Slider nitroSlider;
@@ -47,4 +51,6 @@ public class CarSetup : MonoBehaviour
         rearLeftWheelTransform = transform.Find("Wheels/Meshes/RearLeftWheelTransform");
         rearRightWheelTransform = transform.Find("Wheels/Meshes/RearRightWheelTransform");
     }
+
+
 }

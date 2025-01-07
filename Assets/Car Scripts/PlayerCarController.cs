@@ -7,8 +7,10 @@ public class PlayerCarController : CarController
     public Vector3 startPosition;
     public Dictionary<string, KeyCode> keyBindings;
 
+
     void Start()
     {
+
         keyBindings = new Dictionary<string, KeyCode>
         {
             { "forward", KeyCode.W },
@@ -16,15 +18,19 @@ public class PlayerCarController : CarController
             { "left", KeyCode.A },
             { "right", KeyCode.D },
             { "brake", KeyCode.Space },
-            { "nitro", KeyCode.LeftShift }
+            { "nitro", KeyCode.LeftShift },
         };
 
         startPosition = rb.transform.position;
     }
 
-    private void FixedUpdate()
+    void Update()
     {
         GetInput();
+    }
+
+    private void FixedUpdate()
+    {
         HandleMotor();
         HandleSteering();
         UpdateWheels();
@@ -32,7 +38,10 @@ public class PlayerCarController : CarController
         activateNitrus();
         UpdateNitroSlider();
         UpdateAudio();
+
+        // No es necesario manejar el salto aquí si se maneja en Update
     }
+
 
     private void GetInput()
     {
@@ -46,7 +55,10 @@ public class PlayerCarController : CarController
         if (Input.GetKey(keyBindings["left"])) horizontalInput = -1;
         if (Input.GetKey(keyBindings["right"])) horizontalInput = 1;
         isBreaking = Input.GetKey(keyBindings["brake"]);
+
     }
 
 
+
 }
+

@@ -22,15 +22,35 @@ public class AICarController : CarController
     private MovementManager movementManager;
     private ReverseManager reverseManager;
 
+
     public bool hasStartedMoving = false;
     private float startDelay = 1f;
     private float startTimer = 0f;
+    public float collisionForce = 80000f;  // Fuerza de retroceso al recibir una colisión
 
     private void Start()
     {
         InitializeComponents();
         InitializeNodes();
     }
+    
+
+    private void OnEnable()
+    {
+        // Suscribirse al evento de colisión
+        CarCollision.OnCarCollision += HandleCollision;
+    }
+
+    private void OnDisable()
+    {
+        // Asegúrate de desuscribirte para evitar fugas de memoria
+        CarCollision.OnCarCollision -= HandleCollision;
+    }
+
+    // Este método se ejecutará cuando se detecte una colisión
+    
+
+
 
     private void InitializeComponents()
     {
@@ -101,6 +121,23 @@ public class AICarController : CarController
             HandleSteering();
             UpdateWheels();
             movementManager.CheckWaypointDistance(nodes, ref currentNode);
+        }
+    }
+    private void HandleCollision(GameObject collidingCar)
+    {
+        // Si el coche que colisionó no es este AICar, proceder
+        if (collidingCar != gameObject)
+        {
+            // Calcula el vector desde el coche que colisionó (PlayerCar) hacia este AICar
+            Vector3 directionFromPlayer = transform.position - collidingCar.transform.position;
+
+            // Normaliza el vector dirección
+            directionFromPlayer.Normalize();
+
+            // Aplica la fuerza al AICar (este objeto)
+            rb.AddForce(directionFromPlayer * collisionForce + Vector3.up * collisionForce/ 5, ForceMode.Impulse);
+
+            Debug.Log($"Colisión detectada entre {collidingCar.name} y {gameObject.name}");
         }
     }
 
