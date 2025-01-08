@@ -5,18 +5,22 @@ using Application;
 
 public class LapTimer : MonoBehaviour, IRaceTimer
 {
-    public TMP_Text timerText;
+    private TMP_Text timerText;
 
     private float startTime;
     public bool isTiming = false;
     public int lapCount = 0;
     public float lapTime;
     public float[] lapTimes;
-    private int maxLaps = 5;
+    private int maxLaps = 2;
     public float currentTime;
 
     void Start()
     {
+        timerText = GetComponentInChildren<TMP_Text>();
+        if (timerText == null) {
+            Debug.Log("TimerNull");
+        }
         lapTimes = new float[maxLaps];
         timerText.text = "00:00:00";
     }
@@ -66,11 +70,11 @@ public class LapTimer : MonoBehaviour, IRaceTimer
             lapTimes[lapCount] = lapTime;
             Debug.Log("Lap " + (lapCount + 1) + " Time: " + GetFormattedTime());
             lapCount++;
-            StartTimer();  // Start next lap
+            StartTimer(); 
         }
         else
         {
-            StopTimer();  // End race
+            StopTimer(); 
             Debug.Log("Race Finished!");
         }
     }

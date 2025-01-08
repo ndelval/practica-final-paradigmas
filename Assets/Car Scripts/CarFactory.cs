@@ -29,6 +29,7 @@ public class CarFactory : MonoBehaviour
 
             case CarType.RegularCar:
                 car = Instantiate(RegularCar);
+                car.tag = "Player";
                 break;
 
             case CarType.JumpingCar:

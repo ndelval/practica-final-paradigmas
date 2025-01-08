@@ -34,6 +34,7 @@ public class CarControllerBase : MonoBehaviour
 
     private void Awake()
     {
+        
 
         carSetup = GetComponent<CarSetup>();
         rb = GetComponent<Rigidbody>();

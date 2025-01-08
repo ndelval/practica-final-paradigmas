@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject needle;
-    public PlayerCarController Car;
+    private PlayerCarController Car;
 
 
     private float needleStartPosition = 218.214f;
@@ -15,14 +15,22 @@ public class GameManager : MonoBehaviour
     public float vehicleSpeed;
 
     public VolumeManager volumeManager;
-
+    void Start() {
+        Car = FindObjectOfType<PlayerCarController>();
+    }
     // Update is called once per frame
     void FixedUpdate()
-    {
-
-        vehicleSpeed = Car.speed;
-        UpdateNeedle();
-        volumeManager.changeVolume();
+    {   
+        
+        if (Car == null) {
+            Car = FindObjectOfType<PlayerCarController>();
+        }
+        else{
+            vehicleSpeed = Car.speed;
+            UpdateNeedle();
+            volumeManager.changeVolume();
+        }
+            
         
     }
 

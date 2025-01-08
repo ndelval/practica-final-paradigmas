@@ -50,6 +50,7 @@ public class CarSetup : MonoBehaviour
         frontRightWheelTransform = transform.Find("Wheels/Meshes/FrontRightWheelTransform");
         rearLeftWheelTransform = transform.Find("Wheels/Meshes/RearLeftWheelTransform");
         rearRightWheelTransform = transform.Find("Wheels/Meshes/RearRightWheelTransform");
+        nitroSlider = GameObject.FindGameObjectWithTag("NitroSlide").GetComponent<Slider>();
     }
 
 
