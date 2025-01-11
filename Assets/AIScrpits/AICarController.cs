@@ -24,7 +24,7 @@ public class AICarController : CarController
     public bool hasStartedMoving = false;
     private float startDelay = 1f;
     private float startTimer = 0f;
-    private float collisionForce = 100;
+    private float collisionForce = 1000;
 
     private void Start()
     {

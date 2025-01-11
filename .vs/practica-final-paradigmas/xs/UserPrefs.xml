@@ -5,27 +5,34 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b9659bbb-e956-4a26-ad30-a53bb2703d8c" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Car Scripts/CarSelectionMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AIScrpits/AICarController.cs">
     <Files>
-      <File FileName="Assets/Car Scripts/CarController.cs" />
-      <File FileName="Assets/Car Scripts/HumoTuboEscape.cs" />
-      <File FileName="Assets/Car Scripts/CarCollision.cs" Line="21" Column="1" />
-      <File FileName="Assets/Car Scripts/JumpingCarController.cs" />
-      <File FileName="Assets/Car Scripts/CarControllerBase.cs" />
-      <File FileName="Assets/Car Scripts/PlayerJumpingCarController.cs" />
-      <File FileName="Assets/Car Scripts/CarSetup.cs" />
+      <File FileName="Assets/Car Scripts/HumoTuboEscape.cs" Line="1" Column="1" />
+      <File FileName="Assets/Car Scripts/CarCollision.cs" Line="17" Column="57" />
+      <File FileName="Assets/Car Scripts/CarControllerBase.cs" Line="14" Column="24" />
+      <File FileName="Assets/Car Scripts/JumpingCarController.cs" Line="13" Column="10" />
+      <File FileName="Assets/Car Scripts/CarController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Car Scripts/CarSetup.cs" Line="1" Column="1" />
+      <File FileName="Assets/Car Scripts/PlayerJumpingCarController.cs" Line="22" Column="44" />
+      <File FileName="Assets/Car Scripts/PlayerCarController.cs" Line="17" Column="39" />
       <File FileName="Assets/EscapeUI/SettingsMenu.cs" Line="1" Column="1" />
       <File FileName="Assets/EscapeUI/PlayerReset.cs" />
-      <File FileName="Assets/Car Scripts/CarFactory.cs" />
-      <File FileName="Assets/AIScrpits/AICarController.cs" />
-      <File FileName="Assets/GameManager.cs" />
-      <File FileName="Assets/Car Scripts/CarSelectionMenu.cs" Line="83" Column="1" />
+      <File FileName="Assets/Car Scripts/CarFactory.cs" Line="1" Column="1" />
+      <File FileName="Assets/AIScrpits/AICarController.cs" Line="27" Column="40" />
+      <File FileName="Assets/AIScrpits/CollisionManager.cs" Line="22" Column="157" />
+      <File FileName="Assets/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Car Scripts/CarSelectionMenu.cs" Line="55" Column="56" />
+      <File FileName="Assets/Car Scripts/MenuStates.cs" Line="72" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="practica-final-paradigmas" expanded="True">
-            <Node name="Assembly-CSharp" selected="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="AIScrpits" expanded="True" />
+              <Node name="Car Scripts" expanded="True" />
+              <Node name="EscapeUI" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
