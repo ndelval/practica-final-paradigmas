@@ -387,6 +387,7 @@
 "Assets/Car Scripts/CarSetup.cs"
 "Assets/Car Scripts/HumoTuboEscape.cs"
 "Assets/Car Scripts/JumpingCarController.cs"
+"Assets/Car Scripts/MenuStates.cs"
 "Assets/Car Scripts/PlayerCarController.cs"
 "Assets/Car Scripts/PlayerJumpingCarController.cs"
 "Assets/EscapeUI/KeyBinds.cs"

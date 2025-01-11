@@ -24,7 +24,7 @@ public class AICarController : CarController
     public bool hasStartedMoving = false;
     private float startDelay = 1f;
     private float startTimer = 0f;
-    public float collisionForce = 80000f;
+    private float collisionForce = 100;
 
     private void Start()
     {
@@ -55,7 +55,7 @@ public class AICarController : CarController
         turnManager = new TurnManager(this, carSetup, overtakeManager);
         movementManager = new MovementManager(this, carSetup);
         reverseManager = new ReverseManager(this);
-        collisionManager = new CollisionManager(this);
+        collisionManager = new CollisionManager(this, collisionForce);
         path = FindObjectOfType<Path>().gameObject.transform;
     }
 
@@ -114,8 +114,14 @@ public class AICarController : CarController
         }
     }
 
-    private void HandleCollision(GameObject collidingCar)
+    private void HandleCollision(GameObject collidingCar, Collision collision)
     {
-        collisionManager.HandleCollision(collidingCar);
+        if(collision.gameObject == gameObject)
+        {
+            float relativeImpactForce = collision.relativeVelocity.magnitude;
+
+            collisionManager.HandleCollision(collidingCar, relativeImpactForce);
+        }
+            
     }
 }
