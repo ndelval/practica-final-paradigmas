@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,78 +6,66 @@ public class TurnManager : MonoBehaviour
     private AICarController carController;
     private CarSetup carSetup;
     private OvertakeManager overtakeManager;
+    private ISteeringStrategy steeringStrategy;
     private float maxCurveSpeedBase = 90f;
     private float minCurveSpeed = 20f;
     private float maxCurveAngle = 90f;
-    public float newSteer;
-
-
 
     public TurnManager(AICarController carController, CarSetup carSetup, OvertakeManager overtakeManager)
     {
         this.carController = carController;
         this.carSetup = carSetup;
         this.overtakeManager = overtakeManager;
+        this.steeringStrategy = new NormalSteeringStrategy(); // Estrategia por defecto
     }
 
     public void ApplySteering(Transform targetNode)
     {
-        
-
-        // Check for nearby obstacles using all sensors
         bool hasObstacle;
         overtakeManager.CheckForObstaclesBeforeReturn(out hasObstacle);
-        
+
         if (hasObstacle)
         {
-            // Adjust steering to avoid the obstacle
             if (overtakeManager.IsAvoiding)
             {
                 if (!overtakeManager.cantMove)
                 {
-                    newSteer = carSetup.maxSteerAngle * overtakeManager.avoidMultiplier;
-                    Steer(newSteer);
-
+                    SetSteeringStrategy(new AvoidObstacleSteeringStrategy());
                 }
-
             }
             else
             {
                 Debug.Log("Esquivando obstaculo");
-                
-                newSteer = (carController.transform.position.x > 0 ? -0.1f : 0.1f) * carSetup.maxSteerAngle;
-                Steer(newSteer);
+                SetSteeringStrategy(new AvoidObstacleSteeringStrategy());
             }
         }
         else
         {
             if (overtakeManager.IsAvoiding)
             {
-                newSteer = carSetup.maxSteerAngle * overtakeManager.avoidMultiplier;
-                Steer(newSteer);
+                SetSteeringStrategy(new AvoidObstacleSteeringStrategy());
             }
             else
             {
-                
-                Vector3 relativeVector = carController.transform.InverseTransformPoint(targetNode.position);
-                float targetSteer = (relativeVector.x / relativeVector.magnitude) * carSetup.maxSteerAngle;
-                newSteer = Mathf.Lerp(carController.targetSteerAngle, targetSteer, 0.2f);
-                Steer(newSteer);
+                SetSteeringStrategy(new NormalSteeringStrategy());
             }
         }
 
-        
+        steeringStrategy.Steer(carController, targetNode);
     }
+
+    public void SetSteeringStrategy(ISteeringStrategy strategy)
+    {
+        this.steeringStrategy = strategy;
+    }
+
     public void Steer(float newSteer)
     {
-        
         carController.targetSteerAngle = newSteer;
         carController.horizontalInput = newSteer / carSetup.maxSteerAngle;
-        // Apply the steering angle to the wheels
         carSetup.frontLeftWheelCollider.steerAngle = carController.targetSteerAngle;
         carSetup.frontRightWheelCollider.steerAngle = carController.targetSteerAngle;
     }
-
 
     public void CheckForSharpTurns()
     {
@@ -95,8 +82,8 @@ public class TurnManager : MonoBehaviour
 
             if (currentSpeedKmh > adjustedMaxCurveSpeed)
             {
-                float brakeFactor = Mathf.InverseLerp(0, maxCurveAngle, turnAngle); // Proporcional a la curva
-                carController.verticalInput = Mathf.Lerp(0.8f, 1f, brakeFactor); // Rango ajustado de frenado
+                float brakeFactor = Mathf.InverseLerp(0, maxCurveAngle, turnAngle);
+                carController.verticalInput = Mathf.Lerp(0.8f, 1f, brakeFactor);
                 carController.isBreaking = true;
             }
             else
@@ -118,9 +105,11 @@ public class TurnManager : MonoBehaviour
     private float CalculateMaxSpeedForAngle(float curveAngle)
     {
         float speedFactor = Mathf.Clamp01(1 - (curveAngle / maxCurveAngle));
-        return Mathf.Lerp(minCurveSpeed, maxCurveSpeedBase, speedFactor * speedFactor );
+        return Mathf.Lerp(minCurveSpeed, maxCurveSpeedBase, speedFactor * speedFactor);
     }
 
-
+    public float GetCurrentSteerAngle()
+    {
+        return carController.targetSteerAngle;
+    }
 }
-

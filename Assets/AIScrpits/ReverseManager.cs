@@ -46,15 +46,18 @@ public class ReverseManager
         }
     }
 
-
     public void PerformReverseMovement()
     {
         Vector3 relativeVector = carController.transform.InverseTransformPoint(carController.nodes[carController.currentNode].position);
         float targetSteer = (relativeVector.x / relativeVector.magnitude) * carController.carSetup.maxSteerAngle;
-        carController.turnManager.newSteer = Mathf.Lerp(carController.targetSteerAngle, targetSteer, Time.deltaTime * 2f);
-        carController.targetSteerAngle = -carController.turnManager.newSteer;
-        carController.horizontalInput = -carController.turnManager.newSteer / carController.carSetup.maxSteerAngle;
+
+        // Invert the steering angle for reverse movement
+        carController.targetSteerAngle = Mathf.Lerp(carController.targetSteerAngle, -targetSteer, Time.deltaTime * 2f);
+        carController.horizontalInput = carController.targetSteerAngle / carController.carSetup.maxSteerAngle;
         carController.verticalInput = -1f;
 
+        // Apply the steering angle to the wheels
+        carController.carSetup.frontLeftWheelCollider.steerAngle = carController.targetSteerAngle;
+        carController.carSetup.frontRightWheelCollider.steerAngle = carController.targetSteerAngle;
     }
 }

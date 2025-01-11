@@ -49,7 +49,9 @@ public class OvertakingRightState : IOvertakeState
 
     public void UpdateState(OvertakeManager overtakeManager)
     {
-        overtakeManager.ContinueOvertaking(true, false);
+        bool carAheadCenter, carAheadLeft, carAheadRight;
+        overtakeManager.sensorManager.CheckFrontObstacle(out carAheadCenter, out carAheadLeft, out carAheadRight);
+        overtakeManager.ContinueOvertaking(!carAheadRight, !carAheadLeft);
     }
 
     public void ExitState(OvertakeManager overtakeManager)
@@ -67,7 +69,9 @@ public class OvertakingLeftState : IOvertakeState
 
     public void UpdateState(OvertakeManager overtakeManager)
     {
-        overtakeManager.ContinueOvertaking(false, true);
+        bool carAheadCenter, carAheadLeft, carAheadRight;
+        overtakeManager.sensorManager.CheckFrontObstacle(out carAheadCenter, out carAheadLeft, out carAheadRight);
+        overtakeManager.ContinueOvertaking(!carAheadRight, !carAheadLeft);
     }
 
     public void ExitState(OvertakeManager overtakeManager)

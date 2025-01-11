@@ -2629,7 +2629,7 @@ Transform:
   m_GameObject: {fileID: 401251625}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 416, y: 29.270054, z: 203}
+  m_LocalPosition: {x: 416, y: 29.27005, z: 203.00002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2691,7 +2691,7 @@ Transform:
   m_GameObject: {fileID: 430539308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 382.14993, y: 10.28568, z: 117.92998}
+  m_LocalPosition: {x: 382.14996, y: 10.285679, z: 117.92998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2760,7 +2760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da68c017a94d12bdd5f8ef1912d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 1187780157}
   isTiming: 0
   lapCount: 0
   lapTime: 0
@@ -3646,7 +3645,7 @@ Transform:
   m_GameObject: {fileID: 556044368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 417.1, y: 26.51051, z: 428.7}
+  m_LocalPosition: {x: 417.1, y: 26.510511, z: 428.70004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3726,7 +3725,7 @@ GameObject:
   - component: {fileID: 597953999}
   m_Layer: 5
   m_Name: NitroSlider
-  m_TagString: Untagged
+  m_TagString: NitroSlide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5276,7 +5275,7 @@ Transform:
   m_GameObject: {fileID: 852077281}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.000004, y: 22.022879, z: 138}
+  m_LocalPosition: {x: 55, y: 22.022877, z: 138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9038,7 +9037,7 @@ Transform:
   m_GameObject: {fileID: 1642147034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 403, y: 20.058115, z: 175}
+  m_LocalPosition: {x: 403.00003, y: 20.058111, z: 175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10170,7 +10169,7 @@ Transform:
   m_GameObject: {fileID: 1800731441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 273.71, y: 23.23547, z: 194.6}
+  m_LocalPosition: {x: 273.71, y: 23.235472, z: 194.59999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10223,7 +10222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needle: {fileID: 1097811654}
-  Car: {fileID: 0}
   vehicleSpeed: 0
   volumeManager: {fileID: 1950908336}
 --- !u!114 &1805803258
@@ -11753,7 +11751,7 @@ Transform:
   m_GameObject: {fileID: 2064801729}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 258.75, y: 25.625347, z: 202.94}
+  m_LocalPosition: {x: 258.75, y: 25.625347, z: 202.94002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

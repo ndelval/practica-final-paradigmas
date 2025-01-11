@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -109,3 +108,4 @@ public class OvertakeManager
         hasObstacle = carAheadCenter || carAheadLeft || carAheadRight || !rightSideClear || !leftSideClear;
     }
 }
+
